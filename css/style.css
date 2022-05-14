@@ -136,6 +136,20 @@ img {
     padding-top: 100px;
 }
 
+.stats-heading {
+    max-width: 500px;
+    margin: auto;
+}
+
+.stats .grid-container h3 {
+    font-size: 35px;
+}
+
+.stats .grid-container p {
+    font-size: 20px;
+}
+
+
 /* Utilities */
 .container {
     max-width: 1100px;
@@ -173,6 +187,10 @@ img {
     margin: 10px;
 }
 
+.card h3 {
+    font-size: 15px;
+    font-style: italic;
+}
 .btn {
     display: inline-block;
     padding: 10px 30px;
@@ -194,6 +212,18 @@ img {
 
 .text-center {
     text-align: center;
+}
+
+/* Cli */
+
+.cli .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.cli .grid-container > *:first-child {
+    grid-column: 1 / span 2;
+    grid-row: 1 /span 2;
 }
 
 /* Margin */
