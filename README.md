@@ -1,1 +1,3 @@
-#� �J�y�a�n�g�o�
+# Jyango
+
+_A simple Responsive website using HTML5 and CSS3.
