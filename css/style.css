@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 :root {
-    --primary-color:#047add; 
+    --primary-color:#047add;
+    --secondary-color: #1c3fa8;
+    --dark-color: #002240;
+    --light-color: #f4f4f4;
 }
 
 * {
@@ -208,12 +211,54 @@ img {
 
 .btn:hover {
     transform: scale(0.97);
+    background-color: #0571ca;
+}
+/* background and colored button */
+.bg-primary, .btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.bg-secondary, .btn-secondary {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+.bg-dark, .btn-dark {
+    background-color: var(--dark-color);
+    color: #fff;
 }
 
+.bg-primary a, .btn-primary a, .bg-secondary a, .btn-secondary a,.bg-dark a, .btn-dark a {
+    color: #fff;
+}
+
+.bg-light, .btn-light {
+    background-color: var(--light-color);
+    color: #333;
+}
 .text-center {
     text-align: center;
 }
 
+/* text sizes */
+.lead {
+    font-size: 20px;
+}
+
+.sm {
+    font-size: 1rem;
+}
+
+.md {
+    font-size: 2rem;
+}
+
+.lg {
+    font-size: 3rem;
+}
+
+.xl {
+    font-size: 4rem;
+}
 /* Cli */
 
 .cli .grid-container {
@@ -224,6 +269,44 @@ img {
 .cli .grid-container > *:first-child {
     grid-column: 1 / span 2;
     grid-row: 1 /span 2;
+}
+
+
+/* Cloud */
+
+.cloud .grid-container {
+    grid-template-columns: 3fr 4fr;
+}
+
+/* languages */
+
+.language .flex-container {
+    flex-wrap: wrap;
+}
+.language .card {
+    text-align: center;
+    margin: 18px 10px 40px;
+    transition: transform 0.2s ease-in;
+}
+
+.language .card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.language .card:hover {
+    transform: translateY(-15px);
+}
+
+
+/* Footer */
+
+.footer .social a {
+    margin: 0 10px;
+}
+
+.footer .social a:hover {
+    color: rgb(215, 215, 215);
 }
 
 /* Margin */
@@ -259,7 +342,9 @@ img {
 .m-5 {
     margin: 4rem;
 }
-/* Margin */
+
+
+/* Padding */
 
 .py-1 {
     Padding: 1rem 0;
@@ -293,3 +378,49 @@ img {
     Padding: 4rem;
 }
 
+/* Media queries for tablets and under */
+
+@media ( max-width: 768px) {
+    .grid-container,.showcase .grid-container,.stats .grid-container, .cli .grid-container, .cloud .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .showcase {
+        height: auto;
+    }
+
+    .showcase-text {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .showcase-form {
+        justify-self: center;
+        margin: auto;
+    }
+
+    .cli .grid-container > *:first-child {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+}
+
+/* Mobile */
+
+@media ( max-width: 500px) {
+    .navbar {
+        height: 110px;
+    }
+
+    .navbar .flex-container {
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .navbar ul {
+        padding: 10px;
+        background-color: rgba(0,0,0, 0.1);
+    }
+}
