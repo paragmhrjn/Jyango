@@ -5,6 +5,8 @@
     --secondary-color: #1c3fa8;
     --dark-color: #002240;
     --light-color: #f4f4f4;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
 }
 
 * {
@@ -42,6 +44,11 @@ img {
     width: 100%;
 }
 
+code,pre {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+}
 /* Navbar */
 .navbar {
     background-color: var(--primary-color);
@@ -91,6 +98,9 @@ img {
     overflow: visible;
 }
 
+.showcase-text {
+    animation: slideInFromLeft 1s ease-in;
+}
 .showcase-form {
     position: relative;
     top: 60px;
@@ -99,6 +109,7 @@ img {
     padding: 40px;
     z-index: 100;
     justify-self: flex-end;
+    animation: slideInFromRight 1s ease-in;
 }
 
 .showcase-form .form-control {
@@ -137,6 +148,7 @@ img {
 
 .stats {
     padding-top: 100px;
+    animation: slideInFromBottom 1s ease-in;
 }
 
 .stats-heading {
@@ -227,16 +239,57 @@ img {
     color: #fff;
 }
 
-.bg-primary a, .btn-primary a, .bg-secondary a, .btn-secondary a,.bg-dark a, .btn-dark a {
-    color: #fff;
-}
 
 .bg-light, .btn-light {
     background-color: var(--light-color);
     color: #333;
 }
+
+.bg-primary a, .btn-primary a, .bg-secondary a, .btn-secondary a,.bg-dark a, .btn-dark a {
+    color: #fff;
+}
+
 .text-center {
     text-align: center;
+}
+
+/* text colors */
+
+.text-primary {
+    color: var(--primary-color);
+}
+.text-secondary {
+    color: var(--secondary-color);
+}
+.text-dark {
+    color: var(--dark-color);
+}
+
+
+.text-light {
+    color: var(--light-color);
+}
+
+/* Alert */
+.alert {
+    background-color: var(--light-color);
+    padding: 10px 20px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.alert i {
+    margin-right: 10px;
+}
+
+.alert-success {
+    background-color: var(--success-color);
+    color: #fff;
+}
+
+.alert-error {
+    background-color: var(--error-color);
+    color: #fff;
 }
 
 /* text sizes */
@@ -299,6 +352,57 @@ img {
 }
 
 
+/* Features */
+
+.features-head img,.document-head img   {
+    width: 200px;
+    justify-self: flex-end;
+}
+.features-sub-head img {
+    width: 300px;
+}
+
+.features-sub-head .feats {
+    text-align: end;
+}
+
+.features-main .card > i {
+    margin: 0 10px;
+}
+
+.features-main .grid-container {
+    padding: 30px;
+}
+
+.features-main .grid-container > *:first-child {
+    grid-column: 1 / span 3;
+}
+
+.features-main .grid-container > *:nth-child(5) {
+    grid-column: 1 / span 2;
+}
+
+
+/* Document */
+.document-main h3 {
+    margin: 20px 0;
+}
+
+.document-main .grid-container {
+    grid-template-columns: 1fr 2fr;
+    align-items: flex-start;
+}
+
+.document-main nav li {
+    font-size: 17px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px #ccc solid;
+}
+
+.document-main a:hover {
+    font-weight:bold;
+}
 /* Footer */
 
 .footer .social a {
@@ -307,6 +411,48 @@ img {
 
 .footer .social a:hover {
     color: rgb(215, 215, 215);
+}
+
+/* Animations */
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 /* Margin */
@@ -381,7 +527,7 @@ img {
 /* Media queries for tablets and under */
 
 @media ( max-width: 768px) {
-    .grid-container,.showcase .grid-container,.stats .grid-container, .cli .grid-container, .cloud .grid-container {
+    .grid-container,.showcase .grid-container,.stats .grid-container, .cli .grid-container, .cloud .grid-container, .features-main .grid-container, .document-main .grid-container {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
     }
@@ -393,16 +539,30 @@ img {
     .showcase-text {
         text-align: center;
         margin-top: 40px;
+        animation: slideInFromTop 1s ease-in;
     }
 
     .showcase-form {
         justify-self: center;
         margin: auto;
+        animation: slideInFromBottom 1s ease-in;
     }
 
     .cli .grid-container > *:first-child {
         grid-column: 1;
         grid-row: 1;
+    }
+
+    .features-head,.features-sub-head, .document-head {
+        text-align: center;
+    }
+
+    .features-head img, .features-sub-head img, .document-head img {
+        justify-self: center;
+    }
+
+    .features-main .grid-container > *:first-child, .features-main .grid-container *:nth-child(5) {
+        grid-column: 1;
     }
 
 }
